@@ -12,24 +12,20 @@ var app = express();
 
 var path = require("path");
 
-require("dotenv").config(); // Sử dụng cors để cho phép cross-origin requests
-// app.use(
-//   cors({
-//     origin: ['https://web-theta-dusky-70.vercel.app', 'exp://192.168.70.131:8081'], 
-//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//     credentials: true,
-//   })
-// );
-
+require("dotenv").config();
 
 app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "https://web-theta-dusky-70.vercel.app");
-  res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,CONNECT,TRACE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Content-Type-Options, Accept, X-Requested-With, Origin, Access-Control-Request-Method, Access-Control-Request-Headers");
-  res.setHeader("Access-Control-Allow-Credentials", true);
-  res.setHeader("Access-Control-Allow-Private-Network", true); //  Firefox caps this at 24 hours (86400 seconds). Chromium (starting in v76) caps at 2 hours (7200 seconds). The default value is 5 seconds.
+  res.header("Access-Control-Allow-Origin", "https://web-theta-dusky-70.vercel.app"); // Các cài đặt khác...
 
-  res.setHeader("Access-Control-Max-Age", 7200);
+  next();
+}); // Sử dụng cors để cho phép cross-origin requests
+
+app.use(cors({
+  origin: ['https://web-theta-dusky-70.vercel.app', 'exp://192.168.70.131:8081'],
+  credentials: true
+}));
+app.use(function (req, res, next) {
+  console.log('Origin:', req.headers.origin);
   next();
 });
 app.use(bodyParser.urlencoded({
