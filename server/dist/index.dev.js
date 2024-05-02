@@ -14,12 +14,6 @@ var path = require("path");
 
 require("dotenv").config();
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://web-theta-dusky-70.vercel.app"); // Các cài đặt khác...
-
-  next();
-}); // Sử dụng cors để cho phép cross-origin requests
-
 app.use(cors({
   origin: ['https://web-theta-dusky-70.vercel.app', 'exp://192.168.70.131:8081'],
   credentials: true
