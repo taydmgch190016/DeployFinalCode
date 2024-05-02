@@ -6,9 +6,12 @@ const app = express();
 const path = require("path");
 require("dotenv").config();
 
+const corsOptions = {
+  origin: /\.onrender\.com$/,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",};
 // Sử dụng cors để cho phép cross-origin requests
 app.use(
-  cors({
+  cors(corsOptions,{
     origin: ['https://web-theta-dusky-70.vercel.app', 'exp://192.168.70.131:8081'], 
     credentials: true,
   })
