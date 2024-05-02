@@ -1,7 +1,7 @@
 import axios from "axios";
 import queryString from "query-string";
 
-const baseURL = "https://finalserver-kz69.onrender.com/api/";
+const baseURL = "https://finalserver-ic0i.onrender.com/api/";
 
 const axiosClient = axios.create({
   baseURL,
