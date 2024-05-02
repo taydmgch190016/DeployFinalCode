@@ -10,13 +10,13 @@ var jwt = require("jsonwebtoken");
 
 var app = express();
 
-var path = require('path');
+var path = require("path");
 
 require("dotenv").config(); // Sử dụng cors để cho phép cross-origin requests
 
 
 app.use(cors({
-  origin: ["http://localhost:3000", "exp://192.168.70.131:8081"],
+  origin: ["http://localhost:3000", "exp://192.168.70.131:8081", "https://final-web-app.vercel.app"],
   // Replace with your client's origin
   credentials: true
 }));
@@ -39,10 +39,11 @@ app.use("/api/auth", require("./routes/web/authRoutes"));
 app.use("/api/products", require("./routes/web/products"));
 app.use("/api/categories", require("./routes/web/categories"));
 app.use("/api/client/auth", require("./routes/mobile/clientAuthRoutes"));
-app.use("/api/client/stores", require("./routes/storeRoute"));
+app.use("/api/client/stores", require("./routes/storeRoutes"));
 app.use("/api/client/products", require("./routes/productRoutes"));
 app.use("/api/orders", require("./routes/mobile/orderRoutes"));
-app.use("/api/customers", require("./routes/mobile/customerRoutes")); // Middleware xử lý request không được xử lý
+app.use("/api/customers", require("./routes/mobile/customerRoutes"));
+app.use("/api/employees", require("./routes/employeeRoutes")); // Middleware xử lý request không được xử lý
 
 app.use(function (req, res, next) {
   var error = new Error("Not found");

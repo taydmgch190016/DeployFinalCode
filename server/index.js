@@ -9,7 +9,7 @@ require("dotenv").config();
 // Sử dụng cors để cho phép cross-origin requests
 app.use(
   cors({
-    origin: ["http://localhost:3000", "exp://192.168.70.131:8081"], // Replace with your client's origin
+    origin: ["http://localhost:3000", "exp://192.168.70.131:8081", "https://final-web-app.vercel.app"], // Replace with your client's origin
     credentials: true,
   })
 );
