@@ -24,7 +24,6 @@ app.use(express.json());
 
 // Kết nối đến MongoDB
 const mongoose = require("mongoose");
-const PORT = process.env.PORT || 5000;
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
@@ -60,6 +59,6 @@ app.use((error, req, res, next) => {
 });
 
 // Khởi động server
-app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`${process.env.PORT}`);
 });

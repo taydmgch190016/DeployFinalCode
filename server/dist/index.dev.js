@@ -31,7 +31,6 @@ app.use(express.json()); // Kết nối đến MongoDB
 
 var mongoose = require("mongoose");
 
-var PORT = process.env.PORT || 5000;
 mongoose.connect(process.env.MONGODB_URI).then(function () {
   console.log("Connected to MongoDB");
 })["catch"](function (err) {
@@ -62,6 +61,6 @@ app.use(function (error, req, res, next) {
   });
 }); // Khởi động server
 
-app.listen(PORT, function () {
-  console.log("http://localhost:".concat(PORT));
+app.listen(process.env.PORT, function () {
+  console.log("".concat(process.env.PORT));
 });
