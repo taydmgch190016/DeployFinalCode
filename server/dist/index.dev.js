@@ -16,7 +16,7 @@ require("dotenv").config(); // Sử dụng cors để cho phép cross-origin req
 
 
 app.use(cors({
-  origin: ["https://deploy-final-web.vercel.app", "exp://192.168.70.131:8081"],
+  origin: ['https://web-theta-dusky-70.vercel.app', 'exp://192.168.70.131:8081'],
   credentials: true
 }));
 app.use(function (req, res, next) {
