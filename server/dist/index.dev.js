@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
   next();
 });
 app.use(cors({
-  origin: ['https://web-theta-dusky-70.vercel.app', 'exp://192.168.70.131:8081'],
+  origin: ['https://final-web-ten.vercel.app', 'exp://192.168.70.131:8081'],
   credentials: true
 }));
 app.use(bodyParser.urlencoded({
