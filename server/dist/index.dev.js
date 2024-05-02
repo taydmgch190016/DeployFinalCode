@@ -17,9 +17,12 @@ require("dotenv").config(); // Sử dụng cors để cho phép cross-origin req
 
 app.use(cors({
   origin: ["https://deploy-final-web.vercel.app", "exp://192.168.70.131:8081"],
-  // Replace with your client's origin
   credentials: true
 }));
+app.use(function (req, res, next) {
+  console.log('Origin:', req.headers.origin);
+  next();
+});
 app.use(bodyParser.urlencoded({
   extended: true
 })); // Sử dụng express.json() thay vì body-parser
