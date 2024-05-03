@@ -13,7 +13,7 @@ const OrderDetailScreen = ({ route }) => {
   useEffect(() => {
     const fetchOrderDetail = async () => {
       try {
-        const response = await axios.get(`http://10.0.2.2:5000/api/orders/${orderId}`);
+        const response = await axios.get(`https://finalserver-ic0i.onrender.com/api/orders/${orderId}`);
         setOrder(response.data); // Giả sử dữ liệu trả về là một đơn hàng
       } catch (error) {
         console.error('Error fetching order detail:', error);

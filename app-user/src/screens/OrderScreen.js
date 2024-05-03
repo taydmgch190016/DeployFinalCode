@@ -21,7 +21,7 @@ const OrderScreen = () => {
         const userID = await AsyncStorage.getItem("userID");
         if (userID) {
           const response = await axios.get(
-            `http://10.0.2.2:5000/api/orders/orderByUserId?userID=${userID}`
+            `https://finalserver-ic0i.onrender.com/api/orders/orderByUserId?userID=${userID}`
           );
           setOrders(response.data); // Giả sử dữ liệu trả về là một mảng các đơn hàng
         }
@@ -64,10 +64,11 @@ const OrderScreen = () => {
                       borderBottomWidth: 1,
                       borderBottomColor: "gray",
                       backgroundColor: "#B5BAC3",
-                      marginTop: 10
+                      marginTop: 10,
+                      
                     }}
                   >
-                    <Text>Order ID: {order._id}</Text>
+                    <Text style={{fontSize:12}}>Order ID: {order._id}</Text>
                     <Text style={{fontWeight:"bold"}}>Total Price: {order.totalPrice} $</Text>
                   </View>
                 </TouchableOpacity>

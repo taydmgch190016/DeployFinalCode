@@ -15,7 +15,7 @@ const InformationScreen = () => {
         const userID = await AsyncStorage.getItem("userID");
         if (userID) {
           const response = await axios.get(
-            `http://10.0.2.2:5000/api/customers/${userID}`
+            `https://finalserver-ic0i.onrender.com/api/customers/${userID}`
           );
           setUserData(response.data); // Giả sử dữ liệu trả về là object của người dùng
         }

@@ -15,7 +15,7 @@ const StoreSelectionScreen = ({ navigation }) => {
   const fetchStores = async () => {
     try {
       const response = await axios.get(
-        "http://10.0.2.2:5000/api/client/stores/listStore"
+        "https://finalserver-ic0i.onrender.com/api/client/stores/listStore"
       );
       const userID = await AsyncStorage.getItem('userID');
       console.log("userID",userID);

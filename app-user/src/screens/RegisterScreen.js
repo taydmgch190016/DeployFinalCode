@@ -23,7 +23,7 @@ const RegisterScreen = ({ navigation }) => {
   const handleRegister = async () => {
     try {
       const response = await axios.post(
-        "http://10.0.2.2:5000/api/client/auth/register",
+        "https://finalserver-ic0i.onrender.com/api/client/auth/register",
         {
           username,
           email,

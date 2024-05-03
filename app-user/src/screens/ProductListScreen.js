@@ -34,7 +34,7 @@ const ProductListScreen = ({ route }) => {
   const fetchCategories = async () => {
     try {
       const response = await axios.get(
-        "http://10.0.2.2:5000/api/categories/listCategory"
+        "https://finalserver-ic0i.onrender.com/api/categories/listCategory"
       );
       setCategories(response.data);
     } catch (error) {
@@ -43,7 +43,7 @@ const ProductListScreen = ({ route }) => {
   };
   const fetchProducts = async (categoryId = null) => {
     try {
-      let url = "http://10.0.2.2:5000/api/client/products/" + storeId;
+      let url = "https://finalserver-ic0i.onrender.com/api/client/products/" + storeId;
       if (categoryId) {
         url += `/${categoryId}`;
       }

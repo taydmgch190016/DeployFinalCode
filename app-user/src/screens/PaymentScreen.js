@@ -113,7 +113,7 @@ const PaymentScreen = () => {
     try {
       // Send order data to the backend API using Axios
       const response = await axios.post(
-        "http://10.0.2.2:5000/api/orders/create",
+        "https://finalserver-ic0i.onrender.com/api/orders/create",
         orderData
       );
       dispatch(cleanCart());
@@ -170,7 +170,7 @@ const PaymentScreen = () => {
       try {
         // Send order data to the backend API using Axios
         const response = await axios.post(
-          "http://10.0.2.2:5000/api/orders/create",
+          "https://finalserver-ic0i.onrender.com/api/orders/create",
           orderData
         );
         setFullName("");
