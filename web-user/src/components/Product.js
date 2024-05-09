@@ -173,11 +173,13 @@ const Product = () => {
       title: "Name",
       dataIndex: "name",
       key: "name",
+      align: "center"
     },
     {
       title: "Description",
       dataIndex: "description",
       key: "description",
+      align: "center"
       render: (text) => (
         <Tooltip title={text}>
           <div className="description-cell">
@@ -190,21 +192,25 @@ const Product = () => {
       title: "Price",
       dataIndex: "price",
       key: "price",
+      align: "center",
+      render: (price) => <span>${price}</span>,
     },
     {
       title: "Quantity",
       dataIndex: "quantity",
       key: "quantity",
+      align: "center",
     },
     {
       title: "Image",
       dataIndex: "imageURL",
       key: "imageURL",
+      align: "center",
       render: (_, product) => (
         <img
           src={product.imageURL[0]}
           alt="Product"
-          style={{ width: "100px", height: "100px" }}
+          style={{ width: "115px", height: "115px" }}
         />
       ),
     },
@@ -224,7 +230,7 @@ const Product = () => {
       title: "Actions",
       dataIndex: "",
       key: "actions",
-      align: "right",
+      align: "center",
       render: (_, product) => (
         <div className="actions-cell" style={{ textAlign: "right" }}>
           <Flex wrap="wrap" gap="small" justify="flex-end" align="center">
