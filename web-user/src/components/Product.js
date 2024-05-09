@@ -179,7 +179,7 @@ const Product = () => {
       title: "Description",
       dataIndex: "description",
       key: "description",
-      align: "center"
+      align: "center",
       render: (text) => (
         <Tooltip title={text}>
           <div className="description-cell">
