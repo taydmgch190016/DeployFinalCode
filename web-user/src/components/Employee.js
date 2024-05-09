@@ -254,7 +254,7 @@ const Employee = () => {
               { required: true, message: "Please enter the employee password" },
             ]}
           >
-            <Input />
+            <Input type="password"/>
           </Form.Item>
           <Form.Item
             name="storeId"
