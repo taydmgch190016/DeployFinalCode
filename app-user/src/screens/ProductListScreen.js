@@ -85,6 +85,7 @@ const ProductListScreen = ({ route }) => {
         paddinTop: Platform.OS === "android" ? 40 : 0,
         flex: 1,
         backgroundColor: "white",
+        marginTop:32
       }}
     >
       <View
@@ -93,7 +94,7 @@ const ProductListScreen = ({ route }) => {
           padding: 10,
           flexDirection: "row",
           alignItems: "center",
-          marginTop: 36,
+          marginTop: 5,
         }}
       >
         <Pressable

@@ -25,7 +25,7 @@ const OrderDetailScreen = ({ route }) => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#85F2CC" }}>
-      <View style={{ marginTop: 35 }}>
+      <View >
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back-circle" size={47} color="black" />
         </TouchableOpacity>

@@ -195,7 +195,7 @@ const PaymentScreen = () => {
   };
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
-      <View style={{ marginTop: 35 }}>
+      <View style={{ marginTop: 5 }}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back-circle" size={47} color="black" />
         </TouchableOpacity>

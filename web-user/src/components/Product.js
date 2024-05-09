@@ -33,7 +33,7 @@ const Product = () => {
 
   useEffect(() => {
     fetchProduct();
-  }, []);
+  }, [form.getFieldsValue("_id")]);
 
   const fetchProduct = async () => {
     try {

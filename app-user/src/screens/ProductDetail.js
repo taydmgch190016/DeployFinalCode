@@ -30,7 +30,7 @@ const ProductDetail = () => {
   console.log(cart);
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
-        <View style={{marginTop:35, flexDirection:"row", justifyContent:"space-between"}}>
+        <View style={{marginTop:5, flexDirection:"row", justifyContent:"space-between"}}>
             <TouchableOpacity onPress={()=> navigation.goBack()}>
             <Ionicons name="arrow-back-circle" size={47} color="black" />
             </TouchableOpacity>
