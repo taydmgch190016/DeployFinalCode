@@ -29,6 +29,7 @@ const Product = () => {
   const [image, setImage] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [modalVisible, setModalVisible] = useState(false);
+  const [edit, setEdit] = useState(false);
 
   useEffect(() => {
     fetchProduct();
@@ -116,6 +117,7 @@ const Product = () => {
         );
         setProduct(updatedProduct);
         setModalVisible(false);
+        setEdit(false);
         form.resetFields();
       }
 
@@ -157,6 +159,7 @@ const Product = () => {
   const handleEditButtonClick = (product) => {
     form.setFieldsValue(product);
     setModalVisible(true);
+    setEdit(true);
   };
 
   const handleModalCancel = () => {
@@ -380,7 +383,7 @@ const Product = () => {
             label="Product Image"
             rules={[
               {
-                required: true,
+                required: !edit,
                 message: "Please upload the product image",
               },
             ]}
