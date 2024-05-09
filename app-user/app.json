@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "App Final",
-    "slug": "app-final",
+    "name": "Final App",
+    "slug": "fina-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.minhtay2001.appfinal"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,14 +30,14 @@
     },
     "extra": {
       "eas": {
-        "projectId": "d0ee4916-b6ed-4bf6-8846-e6084ead8675"
+        "projectId": "171e749c-1e06-4159-bf0e-bfbd95bfa22d"
       }
     },
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/d0ee4916-b6ed-4bf6-8846-e6084ead8675"
+      "url": "https://u.expo.dev/171e749c-1e06-4159-bf0e-bfbd95bfa22d"
     }
   }
 }
