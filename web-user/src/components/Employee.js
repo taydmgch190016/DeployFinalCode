@@ -200,6 +200,7 @@ const Employee = () => {
         columns={columns}
         rowKey="_id"
         bordered
+        
         pagination={{
           pageSize: pageSize,
           current: currentPage,
@@ -256,19 +257,6 @@ const Employee = () => {
             ]}
           >
             <Input type="password"/>
-          </Form.Item>
-          <Form.Item
-            name="storeId"
-            label="Store"
-            rules={[{ required: true, message: "Please select the store" }]}
-          >
-            <Select>
-              {storeOptions?.map((store) => (
-                <Select.Option key={store?._id} value={store?._id}>
-                  {store?.name || "N/A"}
-                </Select.Option>
-              ))}
-            </Select>
           </Form.Item>
         </Form>
       </Modal>
