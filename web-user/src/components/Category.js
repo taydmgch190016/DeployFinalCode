@@ -195,6 +195,9 @@ const Category = () => {
                 } else {
                   handleAddCategory(values);
                 }
+              })
+              .catch((error) => {
+                toast.error("Please fill in all information!");
               });
             }}
           >
