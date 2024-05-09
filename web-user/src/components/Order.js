@@ -82,7 +82,7 @@ const Order = () => {
       align: "center",
       render: (shippingAddress) => (
         <span>
-          {`Address: ${shippingAddress.fullName}, ${shippingAddress.address}, ${shippingAddress.city}; Phone numbers: 0${shippingAddress.phone}`}
+          {`Full name: ${shippingAddress.fullName}, Address: ${shippingAddress.address}, ${shippingAddress.city}; Phone numbers: 0${shippingAddress.phone}`}
         </span>
       ),
     },
