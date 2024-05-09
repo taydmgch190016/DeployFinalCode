@@ -6,7 +6,8 @@ import { StyleSheet,
   Image,
   KeyboardAvoidingView,
   TextInput,
-  Pressable, } from "react-native";
+  Pressable,
+  Alert } from "react-native";
 import axios from "axios";
 import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
@@ -34,9 +35,18 @@ const RegisterScreen = ({ navigation }) => {
       // Xử lý khi đăng ký thành công
       console.log(response.data);
       navigation.navigate("Login"); // Chuyển đến màn hình đăng nhập sau khi đăng ký thành công
+      Alert.alert('Register successfully!');
     } catch (error) {
       // Xử lý khi đăng ký thất bại
-      console.error(error);
+      if(error.response.status === 400){
+        Alert.alert('User name or Email does exists');
+      }
+      if(error.response.status === 401){
+        Alert.alert('Email is invalid');
+      }
+      if(error.response.status === 402){
+        Alert.alert('Password is invalid');
+      }
     }
   };
 

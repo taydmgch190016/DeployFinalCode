@@ -3,16 +3,15 @@ import {
   View,
   Text,
   SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Pressable,
-  Image,
   TouchableOpacity,
   Modal,
   TextInput,
   Alert,
   ToastAndroid,
 } from "react-native";
+import {
+  Toast,
+} from '@ant-design/react-native'
 import axios from "axios";
 import WebView from "react-native-webview";
 import { useDispatch, useSelector } from "react-redux";
@@ -122,8 +121,10 @@ const PaymentScreen = () => {
       setCity("");
       setPhone("");
       console.log("Order saved successfully:", response.data);
-      ToastAndroid.show("Order successful", ToastAndroid.SHORT);
-      navigation.navigate("Payment");
+      Alert.alert(
+        "Order successful! You will receive an email about your order."
+      );
+      navigation.navigate("OrderHistory");
       // Optionally, you can navigate to a success screen or perform any other action
       
     } catch (error) {
@@ -153,8 +154,11 @@ const PaymentScreen = () => {
     try {
       const res = paypalApi.capturePayment(id, accessToken);
       console.log("capturePayment res++++", res);
-      alert("Payment sucessfull...!!!");
+      Alert.alert(
+        "Order successful! You will receive an email about your order."
+      );
       clearPaypalState();
+      navigation.navigate("OrderHistory");
       
 
       // Prepare order data

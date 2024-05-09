@@ -65,7 +65,6 @@ const ProductListScreen = ({ route }) => {
     "https://res.cloudinary.com/dcc0yhyjq/image/upload/v1712715100/salethit_qoxcqm.png",
   ];
   const cart = useSelector((state) => state.cart.cart);
-  console.log(cart);
   const dispatch = useDispatch();
   const addItemToCart = (product) => {
     dispatch(addToCart(product));
@@ -84,8 +83,7 @@ const ProductListScreen = ({ route }) => {
       style={{
         paddinTop: Platform.OS === "android" ? 40 : 0,
         flex: 1,
-        backgroundColor: "white",
-        marginTop:32
+        backgroundColor: "white"
       }}
     >
       <View

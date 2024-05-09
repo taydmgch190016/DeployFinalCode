@@ -210,7 +210,7 @@ const Product = () => {
         <img
           src={product.imageURL[0]}
           alt="Product"
-          style={{ width: "115px", height: "115px" }}
+          style={{ width: "115px", height: "115px", borderRadius:10 }}
         />
       ),
     },
@@ -232,7 +232,7 @@ const Product = () => {
       key: "actions",
       align: "center",
       render: (_, product) => (
-        <div className="actions-cell" style={{ textAlign: "right" }}>
+        <div className="actions-cell" style={{  }}>
           <Flex wrap="wrap" gap="small" justify="flex-end" align="center">
             <Button
               type="primary"
