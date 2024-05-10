@@ -1,5 +1,5 @@
 import { createSlice, createSelector  } from "@reduxjs/toolkit";
-
+import { Alert } from "react-native";
 export const CartSlice = createSlice({
   name: "cart",
   initialState: {
@@ -23,10 +23,16 @@ export const CartSlice = createSlice({
       state.cart = removeItem;
     },
     incementQuantity: (state, action) => {
+      const max = 5;
       const itemPresent = state.cart.find(
         (item) => item._id === action.payload._id
       );
+      if(itemPresent.quantities.length < max) {
+
       itemPresent.quantities++;
+    }else{
+      Alert.alert("Error");
+    }
     },
     decrementQuantity: (state, action) => {
       const itemPresent = state.cart.find(
