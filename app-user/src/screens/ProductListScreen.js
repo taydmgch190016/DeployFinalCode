@@ -72,14 +72,11 @@ const ProductListScreen = ({ route }) => {
 
   const handleSearch = (keyword) => {
     setSearchKeyword(keyword);
-    const count = 0;
     // Lọc danh sách sản phẩm dựa trên từ khóa tìm kiếm
     const filtered = products.filter((product) =>
-      product.name.toLowerCase().includes(keyword.toLowerCase());
-
+      product.name.toLowerCase().includes(keyword.toLowerCase())
     );
     setFilteredProducts(filtered);
-    
   };
   return (
     <SafeAreaView
@@ -157,7 +154,7 @@ const ProductListScreen = ({ route }) => {
         />
       </View>
       <View>
-        <Text> 10 product</Text>
+        <Text>10 products</Text>
       </View>
       <ScrollView>
         <View
